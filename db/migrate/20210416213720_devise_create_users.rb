@@ -4,12 +4,12 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
   def change
     create_table :users do |t|
       ## Database authenticatable
-      t.string :email,              null: false, default: ""
-      t.string :encrypted_password, null: false, default: ""
-      t.string :nickname,           null: false # ニックネーム
-      t.integer :time_to_attend,    null: false # 受講期
-      t.integer :classroom,         null: false # 教室 
-      t.integer :course_style,      null: false # 短期集中・夜間休日
+      t.string :email,                 null: false, default: ""
+      t.string :encrypted_password,    null: false, default: ""
+      t.string :nickname,              null: false # ニックネーム
+      t.integer :time_to_attend_id,    null: false # 受講期
+      t.integer :classroom_id,         null: false # 教室 
+      t.integer :course_style_id,      null: false # 短期集中・夜間休日
 
       ## Recoverable
       t.string   :reset_password_token

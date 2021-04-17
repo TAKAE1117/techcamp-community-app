@@ -2,14 +2,14 @@
 
 ## users テーブル
 
-| Column         | Type    | Options     |
-| -------------- | ------- | ----------- |
-| email          | string  | null: false |
-| password       | string  | null: false |
-| nickname       | string  | null: false |
-| time_to_attend | integer | null: false | 
-| classroom      | integer | null: false |
-| course_style   | integer | null: false |
+| Column            | Type    | Options     |
+| ----------------- | ------- | ----------- |
+| email             | string  | null: false |
+| password          | string  | null: false |
+| nickname          | string  | null: false |
+| time_to_attend_id | integer | null: false | 
+| classroom_id      | integer | null: false |
+| course_style_id   | integer | null: false |
 
 ### Association
 
