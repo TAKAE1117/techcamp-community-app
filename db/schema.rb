@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2021_04_16_213720) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "nickname", null: false
-    t.integer "time_to_attend_id", null: false
+    t.integer "time_to_attend", null: false
     t.integer "classroom_id", null: false
     t.integer "course_style_id", null: false
     t.string "reset_password_token"
