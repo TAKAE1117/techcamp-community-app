@@ -27,17 +27,17 @@
 
         <div class="field">
           <%= f.label :time_to_attend, "受講期" %><br />
-          <%= f.text_area :time_to_attend, class: :form__text %>
+          <%= f.text_field :time_to_attend %>
         </div>
 
         <div class="field">
-          <%= f.label :classroom, "教室" %><br />
-          <%= f.text_area :classroom, class: :form__text %>
+          <%= f.label :classroom_id, "教室" %><br />
+          <%= f.collection_select(:classroom_id, Classroom.all, :id, :classroom_id, {} ) %>
         </div>
 
         <div class="field">
-          <%= f.label :course_style, "受講スタイル" %><br />
-          <%= f.text_area :course_style, class: :form__text %>
+          <%= f.label :course_style_id, "受講スタイル" %><br />
+          <%= f.collection_select(:course_style_id, CourseStyle.all, :id, :course_style_id, {} ) %>
         </div>
 
         <div class="actions">
