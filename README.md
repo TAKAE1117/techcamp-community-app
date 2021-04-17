@@ -2,14 +2,14 @@
 
 ## users テーブル
 
-| Column         | Type    | Options     |
-| -------------- | ------- | ----------- |
-| email          | string  | null: false |
-| password       | string  | null: false |
-| nickname       | string  | null: false |
-| time_to_attend | integer | null: false | 
-| classroom      | integer | null: false |
-| course_style   | integer | null: false |
+| Column          | Type    | Options     |
+| --------------- | ------- | ----------- |
+| email           | string  | null: false |
+| password        | string  | null: false |
+| nickname        | string  | null: false |
+| time_to_attend  | integer | null: false | 
+| classroom_id    | integer | null: false |
+| course_style_id | integer | null: false |
 
 ### Association
 
@@ -18,12 +18,12 @@
 
 ## articles テーブル
 
-| Column | Type       | Options           |
-| ------ | ---------- | ----------------- |
-| title  | string     | null: false       |
-| genre  | integer    | null: false       |
-| text   | text       | null: false       |
-| user   | references | foreign_key: true |
+| Column   | Type       | Options           |
+| -------- | ---------- | ----------------- |
+| title    | string     | null: false       |
+| genre_id | integer    | null: false       |
+| text     | text       | null: false       |
+| user     | references | foreign_key: true |
 
 ### Association
 

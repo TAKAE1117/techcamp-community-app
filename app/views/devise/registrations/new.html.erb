@@ -1,0 +1,51 @@
+<div class="main">
+  <div class="inner">
+    <div class="form__wrapper">
+      <h2 class="page-heading">ユーザー新規登録</h2>
+
+      <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+
+        <%# <%= render 'shared/error_messages', model: f.object %>
+
+        <div class="field">
+          <%= f.label :email, "メールアドレス" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password, "パスワード（6文字以上）" %><br />
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password, "パスワード再入力" %><br />
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :nickame, "ニックネーム" %><br />
+          <%= f.text_field :nickname %>
+        </div>
+
+        <div class="field">
+          <%= f.label :time_to_attend, "受講期" %><br />
+          <%= f.text_field :time_to_attend %>
+        </div>
+
+        <div class="field">
+          <%= f.label :classroom_id, "教室" %><br />
+          <%= f.collection_select(:classroom_id, Classroom.all, :id, :classroom_id, {} ) %>
+        </div>
+
+        <div class="field">
+          <%= f.label :course_style_id, "受講スタイル" %><br />
+          <%= f.collection_select(:course_style_id, CourseStyle.all, :id, :course_style_id, {} ) %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "新規登録", class: :form__btn  %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
