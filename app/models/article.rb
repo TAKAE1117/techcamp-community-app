@@ -10,4 +10,13 @@ class Article < ApplicationRecord
   belongs_to :genre
   # // active hashのアソシエーション
   
+  with_options presence: true do
+    validates :title
+    validates :genre_id
+    validates :text
+  end
+
+  with_options numericality: { other_than: 0 } do
+    validates :genre_id
+  end
 end
