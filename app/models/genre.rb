@@ -9,8 +9,8 @@ class Genre < ActiveHash::Base
     { id: 6, genre_id: 'キャリア' },
     { id: 7, genre_id: '家庭' },
     { id: 8, genre_id: '体調' },
-    { id: 9, genre_id: '自己実現' }
-    { id: 9, genre_id: 'その他' }
+    { id: 9, genre_id: '自己実現' },
+    { id: 10, genre_id: 'その他' }
   ]
  
    include ActiveHash::Associations
