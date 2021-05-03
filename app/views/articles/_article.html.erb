@@ -4,6 +4,6 @@
     <p class="card__summary">
       <%= article.text %>
     </p>
-    <%= link_to "by #{article.user.nickname}", root_path, class: :card__user %>
+    <%= link_to "by #{article.user.nickname}", user_path(article.user), class: :card__user %>
   </div>
 </div>
