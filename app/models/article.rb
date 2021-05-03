@@ -2,7 +2,7 @@ class Article < ApplicationRecord
 
   # テーブル感のアソシエーション
   belongs_to :user
-  has_many :comments, dependent: :destroy
+  has_many :comments #, dependent: :destroy
   # // テーブル感のアソシエーション
 
   # active hashのアソシエーション
