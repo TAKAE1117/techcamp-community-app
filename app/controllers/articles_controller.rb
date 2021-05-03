@@ -1,4 +1,9 @@
 class ArticlesController < ApplicationController
+
+  before_action :set_article, only: [:show, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :edit,:destroy]
+  before_action :contributor_confirmation, only: [:edit, :update, :destroy]
+
   def index
     @articles = Article.includes(:user)
   end
@@ -17,17 +22,14 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
     @comment = Comment.new
     @comments = @article.comments.includes(:user)
   end
 
   def edit
-    @article = Article.find(params[:id])
   end
 
   def update
-    @article = Article.find(params[:id])
     if @article.update(article_params)
       redirect_to article_path(@article)
     else
@@ -47,4 +49,13 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:title, :genre_id, :text).merge(user_id: current_user.id)
   end
+
+  def set_article
+    @article = Article.find(params[:id])
+  end
+
+  def contributor_confirmation
+    redirect_to root_path unless current_user == @article.user
+  end
+
 end
