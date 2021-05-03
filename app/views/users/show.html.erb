@@ -1,0 +1,35 @@
+<div class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+        <%= @user.nickname %>
+      </h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">ニックネーム</th>
+            <td class="table__col2"><%= @user.nickname %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">受講期</th>
+            <td class="table__col2"><%= @user.time_to_attend %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">教室</th>
+            <td class="table__col2"><%= @user.classroom.classroom_id %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">受講スタイル</th>
+            <td class="table__col2"><%= @user.course_style.course_style_id %></td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="page-heading">
+        <%= "#{@user.nickname}さんのプロトタイプ"%>
+      </h2>
+      <div class="user__card">
+        <%= render partial: 'articles/article', collection: @user.articles %>
+      </div>
+    </div>
+  </div>
+</div>
